@@ -49,7 +49,7 @@ export default defineConfig((env) => {
         savePath: ".certs",
       }),
       ViteEjsPlugin((viteConfig) => {
-        return { headContent }
+        return { headContent: headContent }
       }),
       vitePluginSingleSpa({
         type: 'root',

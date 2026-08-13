@@ -26,7 +26,8 @@
     "vite-plugin-single-spa": "^1.1.0",
 
     "angular-app": "workspace:*",
-    "sv-desktop-app": "workspace:*"
+    "sv-desktop-app": "workspace:*",
+    "sv-mobile-app": "workspace:*"
   },
   "dependencies": {
     "rxjs": "^7.8.2",

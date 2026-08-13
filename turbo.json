@@ -6,6 +6,7 @@
             "with": [
                 "angular-app#dev:sspa",
                 "sv-desktop-app#dev:sspa",
+                "sv-mobile-app#dev:sspa",
                 "sspa-config#dev:sspa"
             ]
         },

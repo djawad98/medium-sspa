@@ -1,20 +1,11 @@
 <single-spa-router>
   <route default>
-    <application name="@omp/platform"></application>
+    <application name="ng/app"></application>
   </route>
-  <route path="/heatmap">
-    <application name="@omp/sv-mobile/markets"></application>
+  <route path="/markets">
+    <application name="sv-mobile/markets"></application>
   </route>
-  <route path="/marketx">
-    <application name="@omp/sv-mobile/markets"></application>
-  </route>
-  <route path="/home">
-    <application name="@omp/sv-mobile/home"></application>
-  </route>
-  <route path="/wallet/deposit">
-    <application name="@omp/sv-mobile/home"></application>
-  </route>
-  <route path="/trade/:base/:quote">
-    <application name="@omp/sv-mobile/home"></application>
+  <route path="/profile">
+    <application name="sv-mobile/profile"></application>
   </route>
 </single-spa-router>

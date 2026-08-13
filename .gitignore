@@ -18,7 +18,7 @@ coverage
 # Turbo
 .turbo
 
-.nx 
+.nx
 # Vercel
 .vercel
 
@@ -41,3 +41,5 @@ yarn-error.log*
 # JetBrains
 .idea/
 !.idea/vcs.xml
+
+.certs
