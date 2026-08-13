@@ -30,13 +30,13 @@ export default defineConfig((env) => {
           target: "https://localhost:4100",
           changeOrigin: true,
           secure: false,
-          rewrite: path => path.replace('/sv-asset', '/microfrontends/sv-platform-desktop/sv-asset'),
+          rewrite: path => path.replace('/sv-asset', '/microfrontends/sv-desktop-app/sv-asset'),
         },
         "^/sv-asset-mob/.*": {
           target: "https://localhost:4100",
           changeOrigin: true,
           secure: false,
-          rewrite: path => path.replace('/sv-asset-mob', '/microfrontends/sv-platform-mobile/sv-asset-mob'),
+          rewrite: path => path.replace('/sv-asset-mob', '/microfrontends/sv-mobile-app/sv-asset-mob'),
         },
       }
     },
