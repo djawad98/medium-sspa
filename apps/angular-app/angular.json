@@ -63,7 +63,8 @@
               "namedChunks": true
             },
             "sspa-prod": {
-              "main": "./src/sspa.ts"
+              "main": "./src/sspa.ts",
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"

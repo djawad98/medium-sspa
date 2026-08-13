@@ -10,7 +10,7 @@ export default defineConfig((configEnv: ConfigEnv) => {
         serverPort: 5001,
         cssStrategy: 'multiMife',
         spaEntryPoints: [
-          'src/lib/microfrontends/home/sspa-home.js',
+          'src/lib/microfrontends/profile/sspa-profile.js',
           'src/lib/microfrontends/markets/sspa-markets.js'
         ],
         assetFileNames: 'sv-asset/[name][hash][extname]'

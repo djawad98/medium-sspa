@@ -10,6 +10,7 @@ const devImportMapContent = JSON.parse(readFileSync(devImportMapPath, {encoding:
 const prodImportMapPath = path.resolve(__dirname, "../src/importMap.json");
 const sspaDistFolder = path.resolve(__dirname, path.resolve(__dirname, "../dist"));
 const builtMifesPath = sspaDistFolder + "/microfrontends";
+const oldPlatformDistFolder = path.resolve(__dirname, "../../apps/angular-app/dist/angular-app");
 
 
 const prodImportMaps = {imports:{}};
@@ -26,26 +27,25 @@ function main(){
     for(const [mifeName, mifeUrl] of imports){
         let mifeOutputPath = undefined;
 
-        if(mifeName.startsWith('@omp/platform')){
+        if(mifeName.startsWith('ng/')){
             /**
-             * if import entry is from old-platform
+             * if import entry is from old-angular
              */
-            const oldPlatformDistFolder = path.resolve(__dirname, "../../apps/old-platform/dist/apps/platform/fa");
             const mifeFile = readdirSync(oldPlatformDistFolder).find(file => {
-                return (mifeName === '@omp/platform/polyfills.js' ? /^polyfills-[\s\S]*?.js$/i : /^main-[\s\S]*?.js$/i).test(file)
+                return (mifeName === 'ng/polyfills.js' ? /^polyfills-[\s\S]*?.js$/i : /^main-[\s\S]*?.js$/i).test(file)
             });
-            mifeOutputPath = `old-platform/${mifeFile}`
-            copyCommands.push([oldPlatformDistFolder, builtMifesPath + '/old-platform']);
+            mifeOutputPath = `angular-app/${mifeFile}`
+            copyCommands.push([oldPlatformDistFolder, builtMifesPath + '/angular-app']);
 
-        } else if(mifeName.startsWith('@omp/sv')){
+        } else if(mifeName.startsWith('sv')){
             /**
              * if import entry is from svelte projects. Mobile or desktop
             */
-            const mobileOrDesktop = mifeName.startsWith('@omp/sv-mobile') ? 'mobile' : 'desktop';
-            const svelteDistFolder = path.resolve(__dirname, "../../apps/sv-platform-"+mobileOrDesktop+"/build");
+            const mobileOrDesktop = mifeName.startsWith('sv-mobile') ? 'mobile' : 'desktop';
+            const svelteDistFolder = path.resolve(__dirname, "../../apps/sv-"+mobileOrDesktop+"-app/build");
             const mifeFile = mifeUrl.split("/").at(-1);
-            mifeOutputPath = `sv-platform-${mobileOrDesktop}/${mifeFile}`;
-            copyCommands.push([svelteDistFolder, `${builtMifesPath}/sv-platform-${mobileOrDesktop}`]);
+            mifeOutputPath = `sv-${mobileOrDesktop}/${mifeFile}`;
+            copyCommands.push([svelteDistFolder, `${builtMifesPath}/sv-${mobileOrDesktop}`]);
         } else if(mifeUrl.includes('node_modules')){
             /**
              * if import entry is a shared node_module file
@@ -104,18 +104,18 @@ function copyDirectory(src, dest) {
     if (!fs.existsSync(src)) {
       throw new Error(`Source does not exist: ${src}`);
     }
-  
+
     // Remove destination if it exists
     if (fs.existsSync(dest)) {
-      fs.rmSync(dest, { recursive: true, force: true }); 
+      fs.rmSync(dest, { recursive: true, force: true });
     }
-  
+
     // Ensure parent of destDir exists
     const parent = path.dirname(dest);
     if (!fs.existsSync(parent)) {
-      fs.mkdirSync(parent, { recursive: true }); 
+      fs.mkdirSync(parent, { recursive: true });
     }
-  
+
     if(fs.statSync(src).isFile()){
         fs.copyFileSync(src, dest);
     } else {
@@ -123,4 +123,4 @@ function copyDirectory(src, dest) {
         fs.cpSync(src, dest, { recursive: true, });
     }
 }
-  
+
