@@ -1,0 +1,22 @@
+{
+    "$schema": "./node_modules/turbo/schema.json",
+    "ui": "tui",
+    "tasks": {
+        "dev-mifes": {
+            "with": [
+                "angular-app#dev:sspa",
+                "sv-desktop-app#dev:sspa",
+                "sspa-config#dev:sspa"
+            ]
+        },
+        "dev:sspa": {
+            "cache": false,
+            "persistent": true
+        },
+        "build:sspa": {
+            "dependsOn": ["^build:sspa"],
+            "inputs": ["$TURBO_DEFAULT$", "src/**/*.*", "static/**/*.*", "public/**/*.*", "apps/platform/**/*.*" ],
+            "outputs": [".svelte-kit/**", "dist/**", "build/**"]
+        }
+    }
+}

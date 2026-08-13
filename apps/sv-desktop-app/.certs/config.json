@@ -1,0 +1,14 @@
+{
+  "record": {
+    "hosts": [
+      "localhost",
+      "127.0.0.1",
+      "10.15.90.173"
+    ],
+    "hash": {
+      "key": "b00b16afce44cebe501b5d24f04f4d9be1b2cd41ab4942f7eefe1535ca39fd7a",
+      "cert": "eaa7e2f64a4f45521e8af1f640a0a554ee1cbc91e9a8652205347e68724123f8"
+    }
+  },
+  "configFilePath": "/Users/djawad/Documents/code/medium-sspa/apps/sv-desktop-app/.certs/config.json"
+}

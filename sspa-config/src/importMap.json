@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@omp/sv/home": "/microfrontends/sv-platform-desktop/sspa-home.js",
+    "@omp/sv/markets": "/microfrontends/sv-platform-desktop/sspa-markets.js",
+    "@omp/sv/desktop-header": "/microfrontends/sv-platform-desktop/sspa-desktop-header.js",
+    "@omp/sv-mobile/home": "/microfrontends/sv-platform-mobile/sspa-home.js",
+    "@omp/sv-mobile/markets": "/microfrontends/sv-platform-mobile/sspa-markets.js",
+    "@omp/sv-mobile/trade": "/microfrontends/sv-platform-mobile/sspa-trade.js",
+    "@omp/platform": "/microfrontends/old-platform/main-4MPF4IZX.js",
+    "@omp/platform/polyfills.js": "/microfrontends/old-platform/polyfills-ET5TJHZP.js"
+  }
+}

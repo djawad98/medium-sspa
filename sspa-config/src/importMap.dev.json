@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "sv/markets": "https://localhost:5001/src/lib/microfrontends/markets/sspa-markets.js",
+    "sv/profile": "https://localhost:5001/src/lib/microfrontends/profile/sspa-profile.js",
+    "ng/app": "https://localhost:4200/main.js",
+    "ng/polyfills.js": "https://localhost:4200/polyfills.js"
+  }
+}

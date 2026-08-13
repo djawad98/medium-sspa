@@ -1,0 +1,35 @@
+@font-face {
+  font-family: OMPFont;
+  font-style: normal;
+  font-weight: bold;
+  src:
+    url('./IRANYekanX-Bold-fa.woff2') format('woff2'),
+    url('./IRANYekanX-Bold-fa.woff') format('woff');
+}
+
+@font-face {
+  font-family: OMPFont;
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('./IRANYekanX-Regular-fa.woff2') format('woff2'),
+    url('./IRANYekanX-Regular-fa.woff') format('woff');
+}
+
+@font-face {
+  font-family: OMPFont-en;
+  font-style: normal;
+  font-weight: bold;
+  src:
+    url('./IRANYekanX-Bold.woff2') format('woff2'),
+    url('./IRANYekanX-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: OMPFont-en;
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('./IRANYekanX-Regular.woff2') format('woff2'),
+    url('./IRANYekanX-Regular.woff') format('woff');
+}

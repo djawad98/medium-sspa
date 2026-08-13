@@ -1,0 +1,36 @@
+{
+  "name": "sspa-config",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev:sspa": "NODE_USE_SYSTEM_CA=1 vite --force",
+    "build:sspa": "node ./scripts/generate-import-map.js",
+    "preview": "NODE_USE_SYSTEM_CA=1 vite preview",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "ejs": "^4.0.1",
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.57.0",
+    "vite": "^7.3.1",
+    "vite-plugin-ejs": "^1.7.0",
+    "vite-plugin-mkcert": "^1.17.10",
+    "vite-plugin-single-spa": "^1.1.0",
+
+    "angular-app": "workspace:*",
+    "sv-desktop-app": "workspace:*"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.2",
+    "single-spa": "^6.0.3",
+    "single-spa-layout": "^3.0.0"
+  }
+}
