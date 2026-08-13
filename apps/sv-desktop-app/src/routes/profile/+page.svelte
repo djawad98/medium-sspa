@@ -1,1 +1,1 @@
-<p>Hello from profile page</p>
+<p>Hello from profile</p>
